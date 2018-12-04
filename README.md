@@ -71,5 +71,8 @@ The code is elegant: every class has a clear responsibility, methods are short e
 
 # How to test
 
+```
+$ ./node_modules/.bin/cypress open
+```
 # How to run
 
