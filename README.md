@@ -64,12 +64,12 @@ The code is elegant: every class has a clear responsibility, methods are short e
 # Tech Stack
 
 * Create React App
-* Jest (unit tests suite)
-* Cypress (End-to-end test suite)
+* Jest
+* Cypress
 
 # How to install
 
-# How to test
+# How to test (not ready yet)
 
 ```
 $ ./node_modules/.bin/cypress open 
