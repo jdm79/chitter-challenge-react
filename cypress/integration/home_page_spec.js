@@ -11,8 +11,10 @@ describe('Home page', () => {
       .type('james.malvern@email.com')
       .should('have.value', 'james.malvern@email.com')
     // add test to fill in password
+    cy.get('.password')
+    .type('password1234')
     // cy.contains('Password').type('password1234')
     // // add test to click log in
-    // cy.contains('Log in').click()
+    cy.contains('Log in').click()
   })
 })
