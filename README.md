@@ -69,8 +69,14 @@ The code is elegant: every class has a clear responsibility, methods are short e
 
 # How to install
 
-# How to test (not ready yet)
+# How to test
 
+Run the React app before running any tests with the following command:
+```
+$ npm start
+```
+
+Then in another terminal tab:
 ```
 $ ./node_modules/.bin/cypress open 
 ```
@@ -78,5 +84,13 @@ or
 ```
 $ npx cypress open
 ```
+
+* this will open the Cypress GUI 
+* click to run all tests, or choose to only run specific ones
+
 # How to run the app
+
+```
+$ npm start
+```
 
