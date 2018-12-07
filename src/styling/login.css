@@ -1,5 +1,13 @@
 
 
 .label {
-  padding: 20px
+  padding: 10px
+}
+
+.login-form {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+
 }
