@@ -16,6 +16,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>{this.state.title}</h1>
+          <button id="login-button">Log in</button>
         </header>
       </div>
     );
