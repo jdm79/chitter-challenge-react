@@ -7,14 +7,19 @@ describe('Home page', () => {
 
   it('fills in log in form and clicks button', () => {
     // add tests to fill in email
+    cy.visit('/')
     cy.get('.email')
       .type('james.malvern@email.com')
       .should('have.value', 'james.malvern@email.com')
     // add test to fill in password
     cy.get('.password')
-    .type('password1234')
-    // cy.contains('Password').type('password1234')
+      .type('password1234')
     // // add test to click log in
     cy.contains('Log in').click()
+  })
+
+  it('displays tweeps when logged in', () => {
+    cy.visit('/')
+    cy.contains('Tweeps')
   })
 })
