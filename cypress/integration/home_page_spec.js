@@ -1,5 +1,7 @@
 describe('Home page', () => {
-  it('should load the home page', () => {
+  it('successfully loads the home page', () => {
     cy.visit('/')
+    cy.contains('Chitter Frontend')
+
   })
 })
