@@ -10,8 +10,6 @@ class App extends Component {
     }
   }
 
-
-
   render() {
     return (
       <div className="App">
@@ -20,7 +18,7 @@ class App extends Component {
             <h1>{this.state.title}</h1>
           </header>
           <div className="login-button">
-            <button>{this.state.buttonText}</button>
+            <button onClick={() => {alert('logging in')}}>{this.state.buttonText}</button>
           </div>
         </div>   
       </div>
