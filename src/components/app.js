@@ -5,7 +5,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: 'Chitter Frontend'
+      title: 'Chitter Frontend',
+      buttonText: 'Log in' 
     }
   }
 
@@ -14,10 +15,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>{this.state.title}</h1>
-          <button id="login-button">Log in</button>
-        </header>
+        <div className="nav-bar">
+          <header className="App-header">
+            <h1>{this.state.title}</h1>
+          </header>
+          <div className="login-button">
+            <button>{this.state.buttonText}</button>
+          </div>
+        </div>   
       </div>
     );
   }
