@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LoginForm from './login'
 import '../styling/app.css';
 
 class App extends Component {
@@ -17,8 +18,8 @@ class App extends Component {
           <header className="App-header">
             <h1>{this.state.title}</h1>
           </header>
-          <div className="login-button">
-            <button onClick={() => {alert('logging in')}}>{this.state.buttonText}</button>
+          <div className="login">
+            <LoginForm />
           </div>
         </div>   
       </div>
