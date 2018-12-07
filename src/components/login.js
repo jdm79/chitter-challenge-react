@@ -20,12 +20,17 @@ class LoginForm extends Component {
     this.setState({
       [event.target.name]: event.target.value
     });
+    this.handleLoginClick()
+  }
+
+  handleLoginClick() {
+    this.setState({ isLoggedIn: true })
   }
 
   handleSubmit(event){
-    alert('You may now log in with this email: ' + this.state.email + '. Logged in status: ' + this.state.isLoggedIn);
+    alert(`Success! Email: ${this.state.email}, password: ${this.state.password} and logged-in status: ${this.state.isLoggedIn} `);
     event.preventDefault();
-    this.setState({ email: '', password: ''})
+    this.setState({ email: '', password: '' })
   }
 
   render() {
