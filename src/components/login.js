@@ -31,8 +31,10 @@ class LoginForm extends Component {
       this.handleLoginClick()
       event.preventDefault()
       this.setState({ email: '', password: '' })
-    } else {
+    } else if(this.state.isLoggedIn === true){
       this.handleLoginClick()
+      event.preventDefault()
+    } else {
       event.preventDefault()
     }
   }
