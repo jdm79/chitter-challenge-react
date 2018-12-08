@@ -1,7 +1,16 @@
+.input {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  padding: 15px 40px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
 
-
-.label {
-  padding: 10px
+.input #button {
+  text-align: center;
 }
 
 .login-form {
@@ -9,5 +18,4 @@
   flex-direction: row;
   align-items: right;
   justify-content: right;
-
 }
