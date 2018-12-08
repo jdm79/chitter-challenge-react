@@ -23,32 +23,35 @@ class LoginForm extends Component {
   }
 
   handleLoginClick() {
-    this.setState({ isLoggedIn: true })
+    this.setState({ isLoggedIn: this.state.isLoggedIn === false ? true : false })
   }
 
   handleSubmit(event){
     if(this.state.email.length > 0 && this.state.password.length > 0) {
-      alert(`Success! Email: ${this.state.email}, password: ${this.state.password} and logged-in status: ${this.state.isLoggedIn} `)
       this.handleLoginClick()
       event.preventDefault()
       this.setState({ email: '', password: '' })
     } else {
-      alert("Fields cannot be blank")
+      this.handleLoginClick()
       event.preventDefault()
-
     }
   }
 
+  // the logic in the JSX should be put into a function above
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="login-form">
-        <input type="email" name="email" value={this.state.email} placeholder="Email" 
-        className="email" id="input" onChange={this.handleChange} />
-        <input type="password" name="password" value={this.state.password} placeholder="Password"
-        className="password" id="input" onChange={this.handleChange} />
-        <input type="submit" className="button" id="input" value={this.state.isLoggedIn === false ? "Log in" : "Log out"} />
-        <p>Logged in status: {this.state.isLoggedIn === false ? "Logged Out" : "Logged In"}</p>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit} className="login-form">
+          <input type="email" name="email" value={this.state.email} placeholder="Email" 
+          className="email" id="input" onChange={this.handleChange} />
+          <input type="password" name="password" value={this.state.password} placeholder="Password"
+          className="password" id="input" onChange={this.handleChange} />
+          <input type="submit" className="button" id="input" 
+          value={this.state.isLoggedIn === false ? "Log in" : "Log out"} />
+        </form>
+        <p>Status: {this.state.isLoggedIn === false ? "Logged Out" : `${this.state.email} Logged In`}</p>
+
+      </div>
     );
   }
 }
