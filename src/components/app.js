@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import LoginForm from './login'
-import '../styling/app.css';
+import '../styling/app.css'
 
 class App extends Component {
   constructor(props) {

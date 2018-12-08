@@ -20,7 +20,6 @@ class LoginForm extends Component {
       this.setState({
         [event.target.name]: event.target.value
       });
-      this.handleLoginClick()
   }
 
   handleLoginClick() {
@@ -30,6 +29,7 @@ class LoginForm extends Component {
   handleSubmit(event){
     if(this.state.email.length > 0 && this.state.password.length > 0) {
       alert(`Success! Email: ${this.state.email}, password: ${this.state.password} and logged-in status: ${this.state.isLoggedIn} `)
+      this.handleLoginClick()
       event.preventDefault()
       this.setState({ email: '', password: '' })
     } else {
@@ -43,10 +43,11 @@ class LoginForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="login-form">
         <input type="email" name="email" value={this.state.email} placeholder="Email" 
-        className="email" onChange={this.handleChange} />
+        className="email" id="input" onChange={this.handleChange} />
         <input type="password" name="password" value={this.state.password} placeholder="Password"
-        className="password" onChange={this.handleChange} />
-        <input type="submit" value="Log in" />
+        className="password" id="input" onChange={this.handleChange} />
+        <input type="submit" className="button" id="input" value={this.state.isLoggedIn === false ? "Log in" : "Log out"} />
+        <p>Logged in status: {this.state.isLoggedIn === false ? "Logged Out" : "Logged In"}</p>
       </form>
     );
   }
