@@ -1,13 +1,3 @@
-.button {
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-
-.button:hover {
-  background-color: #008CBA;
-  color: white;
-}
-
 #input {
   background-color: #fff;
   border: none;
@@ -16,12 +6,15 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 2px; 
 }
 
-.login-form {
-  display: flex;
-  flex-direction: row;
-  align-items: right;
-  justify-content: right;
+.button {
+  -webkit-transition-duration: 0.9s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#input.button:hover {
+  background-color: #008CBA;
+  color: white;
 }
