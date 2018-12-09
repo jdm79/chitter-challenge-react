@@ -43,16 +43,32 @@ class LoginForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="login-form">
-          <input type="email" name="email" value={this.state.email} placeholder="Email" 
-          className="email" id="input" onChange={this.handleChange} />
-          <input type="password" name="password" value={this.state.password} placeholder="Password"
-          className="password" id="input" onChange={this.handleChange} />
-          <input type="submit" className="button" id="input" 
-          value={!this.state.isLoggedIn ? "Log in" : "Log out"} />
+        <form 
+          onSubmit={this.handleSubmit} 
+          className="login-form">
+          <input 
+            type="email" 
+            name="email" 
+            value={this.state.email} 
+            placeholder="Email" 
+            className="email" 
+            id="input" 
+            onChange={this.handleChange} />
+          <input 
+            type="password" 
+            name="password" 
+            value={this.state.password} 
+            placeholder="Password"
+            className="password" 
+            id="input" 
+            onChange={this.handleChange} />
+          <input 
+            type="submit" 
+            className="button" 
+            id="input" 
+            value={!this.state.isLoggedIn ? "Log in" : "Log out"} />
         </form>
         <p>Status: {!this.state.isLoggedIn ? "Logged Out" : `${this.state.email} Logged In`}</p>
-
       </div>
     );
   }
