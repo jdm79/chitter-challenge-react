@@ -1,0 +1,13 @@
+.peep {
+  list-style-type: none;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.peeps {
+  margin-right: 40px;
+  padding-right: 10px;
+}
