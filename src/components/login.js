@@ -74,7 +74,7 @@ class LoginForm extends Component {
             id="input" 
             value={!this.state.isLoggedIn ? "Log in" : "Log out"} />
         </form>
-        <p>Status: {!this.state.isLoggedIn ? "Logged Out" : `${this.state.email} Logged In`}</p>
+        <p>Status: {!this.state.isLoggedIn ? "Logged out" : `${this.state.email} is logged in`}</p>
       </div>
     );
   }
