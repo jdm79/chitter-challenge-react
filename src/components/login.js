@@ -26,6 +26,10 @@ class LoginForm extends Component {
     this.setState({ isLoggedIn: !this.state.isLoggedIn ? true : false })
   }
 
+  // refactor this function - DRY
+  // don't need the 'else' here
+  // put this.state.isLoggedIn first
+  // this.state.email.length === this.state.email.length > 0
   handleSubmit(event){
     if(this.state.email.length > 0 && this.state.password.length > 0) {
       this.handleLoginClick()
@@ -39,7 +43,9 @@ class LoginForm extends Component {
     }
   }
 
-  // the logic in the JSX should be put into a function above
+  // make a renderForm function for this form
+  // so that it renders based on isLoggedIn.
+  // in this case don't render the input boxes if logged in
   render() {
     return (
       <div>
