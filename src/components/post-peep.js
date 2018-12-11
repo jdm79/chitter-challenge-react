@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import '../styling/post-peep.css';
+import '../styling/post-peep.css'
 
 class PostPeepForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: '',
-      url: 'https://chitter-backend-api.herokuapp.com/peeps/'
-    };
+      body: ''
+    }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -15,29 +14,24 @@ class PostPeepForm extends Component {
   // this uses ES6 to access the name of input and the value from it
   // saves having to write lots of handleChanges
   handleChange(event) {
-    this.setState({ peep: event.target.value})
+    this.setState({ body: event.target.value})
   }
 
-  handleCheckNewPeeps() {
-    fetch(this.state.url)
-  }
-  
-
-  // lifting state up is required here to pass these new peeps as props to the peeps.js component
+  // need to work out how to let the peeps component know there is a new peep
   handleSubmit(event){
     this.handleNewPeep()
-    console.log(this.state.peep)
-    // event.preventDefault()
+    console.log(this.state.body)
+    event.preventDefault()
   }
 
   handleNewPeep() {
 
-    let content = {"peep": {"user_id":665, "body":this.state.peep}};
+    let content = {"peep": {"user_id": this.props.userID, "body": this.state.body}}
     // The actual fetch request
-      fetch(this.state.url, {
+      fetch('https://chitter-backend-api.herokuapp.com/peeps', {
         method: 'POST',
         headers: {
-        'Authorization': 'Token token=_2a_10_dpxezbQVCyQeSr1fMOKfyO',
+        'Authorization': `Token token=${this.props.token}`,
         'Content-Type': 'application/json'
         },
         body: JSON.stringify(content)
@@ -53,7 +47,7 @@ class PostPeepForm extends Component {
             <input 
               type="text" 
               name="postPeep" 
-              value={this.state.peep} 
+              value={this.state.body} 
               placeholder="Post your peep here..." 
               className="post-peep" 
               id="input" 
