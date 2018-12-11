@@ -9,6 +9,14 @@ describe('Home page', () => {
     cy.url().should('eq', 'http://localhost:3000/')
   })
 
+  // So that I can let people know what I am doing  
+  // I want to post a message (peep) to chitter
+  it('posts a message to chitter', () => {
+    cy.get('.post-peep')
+      .type('hullo world')
+    cy.contains('Post').click()
+  })
+
   it('fills in log in form and clicks button', () => {
     // add tests to fill in email
     cy.get('.email')
@@ -21,7 +29,7 @@ describe('Home page', () => {
     cy.contains('Log in').click()
   })
 
-  it('displays tweeps when logged in', () => {
-    cy.contains('Tweeps')
-  })
+  // it('displays tweeps when logged in', () => {
+  //   cy.contains('Tweeps')
+  // })
 })
