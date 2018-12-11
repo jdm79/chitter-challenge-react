@@ -5,28 +5,48 @@ class PostPeepForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      peep: '',
+      body: '',
+      url: 'https://chitter-backend-api.herokuapp.com/peeps/'
     };
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-
   // this uses ES6 to access the name of input and the value from it
   // saves having to write lots of handleChanges
   handleChange(event) {
-      this.setState({ peep: event.target.value})
+    this.setState({ peep: event.target.value})
+  }
+
+  handleCheckNewPeeps() {
+    fetch(this.state.url)
   }
   
+
+  // lifting state up is required here to pass these new peeps as props to the peeps.js component
   handleSubmit(event){
-      alert(`this is your peep: ${this.state.peep}`)
-      event.preventDefault()
+    this.handleNewPeep()
+    console.log(this.state.peep)
+    // event.preventDefault()
   }
+
+  handleNewPeep() {
+
+    let content = {"peep": {"user_id":665, "body":this.state.peep}};
+    // The actual fetch request
+      fetch(this.state.url, {
+        method: 'POST',
+        headers: {
+        'Authorization': 'Token token=_2a_10_dpxezbQVCyQeSr1fMOKfyO',
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(content)
+      })
+    } 
 
   render() {
     return (
-      <div>
-        <div>
+        <div className="container">
           <form 
             onSubmit={this.handleSubmit} 
             className="post-peep-form">
@@ -47,7 +67,6 @@ class PostPeepForm extends Component {
               />
           </form>
         </div>
-      </div>
     );
   }
 }
