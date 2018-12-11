@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from './login'
-import Peeps from './peeps'
-import PostPeepForm from './post-peep'
+// import Peeps from './peeps'
+// import PostPeepForm from './post-peep'
 
 import '../styling/app.css'
 
@@ -16,8 +16,6 @@ class App extends Component {
           </header>
           <div>
             <LoginForm />
-            <PostPeepForm />
-            <Peeps />
           </div>
         </div>   
       </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PostPeepForm from './post-peep'
+import Peeps from './peeps'
 import '../styling/login.css';
 
 class LoginForm extends Component {
@@ -6,8 +8,8 @@ class LoginForm extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
-      email: '',
-      password: ''
+      userID: '',
+      token: ''
     };
 
     this.handleChange = this.handleChange.bind(this)
@@ -22,6 +24,10 @@ class LoginForm extends Component {
       });
   }
 
+  // a function here that upon log in, makes an api request to get
+  // the handle of the user_id (if authenticated)
+  // and display message saying 'handle logged in'
+
   handleLoginClick() {
     this.setState({ isLoggedIn: !this.state.isLoggedIn ? true : false })
   }
@@ -31,10 +37,9 @@ class LoginForm extends Component {
   // put this.state.isLoggedIn first
   // this.state.email.length === this.state.email.length > 0
   handleSubmit(event){
-    if(this.state.email.length > 0 && this.state.password.length > 0) {
+    if(this.state.userID.length > 0 && this.state.token.length > 0) {
       this.handleLoginClick()
       event.preventDefault()
-      // this.setState({ email: '', password: '' })
     } else if(this.state.isLoggedIn){
       this.handleLoginClick()
       event.preventDefault()
@@ -53,18 +58,18 @@ class LoginForm extends Component {
           onSubmit={this.handleSubmit} 
           className="login-form">
           <input 
-            type="email" 
-            name="email" 
-            value={this.state.email} 
-            placeholder="Email" 
+            type="text" 
+            name="userID" 
+            value={this.state.userID} 
+            placeholder="userID" 
             className="email" 
             id="input" 
             onChange={this.handleChange} />
           <input 
-            type="password" 
-            name="password" 
-            value={this.state.password} 
-            placeholder="Password"
+            type="text" 
+            name="token" 
+            value={this.state.token} 
+            placeholder="Token"
             className="password" 
             id="input" 
             onChange={this.handleChange} />
@@ -74,7 +79,9 @@ class LoginForm extends Component {
             id="input" 
             value={!this.state.isLoggedIn ? "Log in" : "Log out"} />
         </form>
-        <p>Status: {!this.state.isLoggedIn ? "Logged out" : `${this.state.email} is logged in`}</p>
+        <p>Status: {!this.state.isLoggedIn ? "Logged out" : `${this.state.userID} is logged in`}</p>
+        <PostPeepForm userID={this.state.userID} token={this.state.token}/>
+        <Peeps />
       </div>
     );
   }
