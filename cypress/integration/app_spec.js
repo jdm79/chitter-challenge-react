@@ -29,7 +29,10 @@ describe('Home page', () => {
     cy.contains('Log in').click()
   })
 
-  // it('displays tweeps when logged in', () => {
-  //   cy.contains('Tweeps')
-  // })
+  // this test needs to be mocked
+  // async - peeps don't load immediately
+  it('displays tweeps when logged in', () => {
+
+    cy.contains('Tweeps')
+  })
 })
