@@ -10,8 +10,8 @@ class Peeps extends Component {
   }
 
   componentDidMount() {
-    const url = "https://chitter-backend-api.herokuapp.com/peeps"
-    fetch(url)
+    const url = 'https://chitter-backend-api.herokuapp.com'
+    fetch(`${url}/peeps`)
       .then(blob => blob.json())
       .then(data => this.setState({ peeps: data}))
   }
