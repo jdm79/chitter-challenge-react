@@ -19,12 +19,12 @@ describe('Home page', () => {
 
   it('fills in log in form and clicks button', () => {
     // add tests to fill in email
-    cy.get('.email')
-      .type('james.malvern@email.com')
-      .should('have.value', 'james.malvern@email.com')
+    cy.get('.input#id')
+      .type('232')
+      .should('have.value', '232')
     // add test to fill in password
-    cy.get('.password')
-      .type('password1234')
+    cy.get('.input#token')
+      .type('tokenvalue')
     // // add test to click log in
     cy.contains('Log in').click()
   })
