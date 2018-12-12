@@ -62,21 +62,21 @@ class LoginForm extends Component {
             name="userID" 
             value={this.state.userID} 
             placeholder="userID" 
-            className="email" 
-            id="input" 
+            className="input"
+            id="id"
             onChange={this.handleChange} />
           <input 
             type="text" 
             name="token" 
             value={this.state.token} 
             placeholder="Token"
-            className="password" 
-            id="input" 
+            className="input"
+            id="token"
             onChange={this.handleChange} />
           <input 
             type="submit" 
-            className="button" 
-            id="input" 
+            className="input" 
+            id="button"
             value={!this.state.isLoggedIn ? "Log in" : "Log out"} />
         </form>
         <p>Status: {!this.state.isLoggedIn ? "Logged out" : `${this.state.userID} is logged in`}</p>
