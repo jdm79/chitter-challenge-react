@@ -12,7 +12,7 @@ describe('Home page', () => {
   // So that I can let people know what I am doing  
   // I want to post a message (peep) to chitter
   it('posts a message to chitter', () => {
-    cy.get('.post-peep')
+    cy.get('.post-peep#text-area')
       .type('hullo world')
     cy.contains('Post').click()
   })
