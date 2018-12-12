@@ -1,4 +1,4 @@
-#input {
+.input {
   background-color: #fff;
   border: none;
   color: #000;
@@ -14,7 +14,7 @@
   transition-duration: 0.4s;
 }
 
-#input.button:hover {
+#button.input:hover {
   background-color: #008CBA;
   color: white;
 }
